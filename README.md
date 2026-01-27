@@ -9,11 +9,14 @@ Note: The model does **not** fact-check content; it classifies articles based on
 A **Streamlit web application** is provided so users can interactively test the model by pasting article text.
 
 ## Dataset
-The dataset consists of records, each containing text of a news article and one of the following labels:
+The dataset consists of news articles labeled as:
 - `FAKE`
 - `REAL`
 
----
+Each record contains the full text of a news article and its corresponding label.  
+Due to file size limitations, the dataset files are not included in this repository.  
+They can be obtained from here: 
+https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset
 
 ## Model & Approach
 - **Framework:** fastai (PyTorch)
@@ -47,3 +50,4 @@ fake-news-classifier/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+
