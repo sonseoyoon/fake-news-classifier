@@ -1,0 +1,7 @@
+fastai
+torch
+pandas
+numpy
+scikit-learn
+ipython
+streamlit
