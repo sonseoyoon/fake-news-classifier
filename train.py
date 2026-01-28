@@ -9,6 +9,7 @@ print(f"Using device: {default_device()}")
 def main():
     df = pd.read_csv("/kaggle/input/fake-news/fake_news.csv")
 
+    # prepare data (tokenisation + text->num)
     dls = TextDataLoaders.from_df(
         df,
         text_col="text", # input
@@ -17,12 +18,14 @@ def main():
         seed=42,
     )
 
+    # create model
     learn = text_classifier_learner(
-        dls, # text->num
+        dls,
         AWD_LSTM, # pretrained language model
         metrics=[accuracy, Precision(), Recall()]
     )
     
+    # train model
     learn.fine_tune(1)
 
     interp = ClassificationInterpretation.from_learner(learn)
